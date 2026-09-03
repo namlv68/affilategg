@@ -6,7 +6,7 @@
 export async function safeFetchJson<T = any>(
   input: RequestInfo | URL,
   init?: RequestInit,
-  retries = 2
+  retries = 4
 ): Promise<T> {
   let attempt = 0;
   while (true) {
@@ -19,7 +19,9 @@ export async function safeFetchJson<T = any>(
         throw new Error("Yêu cầu đã bị hủy hoặc quá thời gian chờ (timeout). Vui lòng thử lại.");
       }
       if (attempt <= retries) {
-        await new Promise((r) => setTimeout(r, 1500));
+        const delay = attempt * 1500;
+        console.warn(`[SafeFetch] Network error on attempt ${attempt}/${retries + 1}. Retrying in ${delay}ms...`);
+        await new Promise((r) => setTimeout(r, delay));
         continue;
       }
       throw new Error("Không thể kết nối tới máy chủ. Vui lòng kiểm tra kết nối mạng và thử lại.");
@@ -38,8 +40,9 @@ export async function safeFetchJson<T = any>(
     if (!response.ok) {
       const isTransient = [404, 502, 503, 504].includes(response.status) || !isJson || rawText.includes("<!doctype") || rawText.includes("The page c");
       if (isTransient && attempt <= retries) {
-        console.warn(`[SafeFetch] Transient error status ${response.status} on attempt ${attempt}/${retries + 1}. Retrying in 1.5s...`);
-        await new Promise((r) => setTimeout(r, 1500));
+        const delay = attempt * 1500;
+        console.warn(`[SafeFetch] Transient error status ${response.status} on attempt ${attempt}/${retries + 1}. Retrying in ${delay}ms...`);
+        await new Promise((r) => setTimeout(r, delay));
         continue;
       }
 
