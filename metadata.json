@@ -1,0 +1,6 @@
+{
+  "name": "NAM AI THỜI TRANG & GIA DỤNG",
+  "description": "Nền tảng sinh kịch bản thoại video Thời Trang & Gia Dụng với Prompt AI Video chất lượng cao.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

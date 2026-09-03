@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  /* Rich Royal Purple / Vivid Violet Scale as primary accent */
+  --color-luxury-50: #faf5ff;
+  --color-luxury-100: #f3e8ff;
+  --color-luxury-200: #e9d5ff;
+  --color-luxury-300: #d8b4fe;
+  --color-luxury-400: #c084fc;  /* Bright Lilac / Lavender */
+  --color-luxury-500: #a855f7;  /* Vivid Purple Accent */
+  --color-luxury-600: #9333ea;  /* Deep Electric Purple */
+  --color-luxury-700: #7e22ce;  /* Royal Violet */
+  --color-luxury-800: #581c87;  /* Amethyst */
+  --color-luxury-900: #3b0764;  /* Deep Violet Background */
+  --color-luxury-950: #240046;  /* Nocturnal Violet Glow */
+
+  /* Deep Midnight Purple / Violet Noir Slate Canvas */
+  --color-slate-950: #0d091a;  /* Main Canvas Background: Deep midnight purple-black */
+  --color-slate-900: #17112c;  /* Cards/Surfaces: Rich dark violet */
+  --color-slate-850: #22183e;  /* Elevated cards, hover states */
+  --color-slate-800: #312356;  /* Primary form borders, inactive tabs */
+  --color-slate-755: #3f2d6e;  /* Subtle elevated control */
+  --color-slate-700: #503a8a;  /* Hovered input borders, clear divider lines */
+  --color-slate-600: #735aa8;  /* Secondary icons, muted tags */
+  --color-slate-500: #9681c7;  /* Auxiliary text, captions */
+  --color-slate-400: #b8a5e6;  /* Clear descriptions, body text */
+  --color-slate-300: #ded3fc;  /* High contrast labels & subtitles */
+  --color-slate-200: #ede7fe;  /* Section headings */
+  --color-slate-100: #fbf9ff;  /* Primary pure headings & input texts */
+  --color-slate-50: #ffffff;   /* Pure white */
+
+  /* Violet & Fuchsia gradient complements */
+  --color-indigo-950: #190a36;
+  --color-indigo-900: #2a1158;
+  --color-indigo-800: #431b8a;
+  --color-indigo-700: #632cc7;
+  --color-indigo-600: #7c3aed;
+  --color-indigo-500: #8b5cf6;
+  --color-indigo-400: #a78bfa;
+  --color-indigo-300: #c4b5fd;
+  --color-indigo-200: #ddd6fe;
+  --color-indigo-100: #ede9fe;
+  --color-indigo-50: #f5f3ff;
+
+  /* Rose / Magenta punchy accents */
+  --color-rose-950: #260517;
+  --color-rose-900: #4c0b2f;
+  --color-rose-800: #831843;
+  --color-rose-700: #be185d;
+  --color-rose-600: #db2777;
+  --color-rose-500: #ec4899;
+  --color-rose-400: #f472b6;
+  --color-rose-300: #f9a8d4;
+  --color-rose-200: #fbcfe8;
+  --color-rose-100: #fce7f3;
+  --color-rose-50: #fdf2f8;
+}
+
+/* Custom scrollbar in sleek purple tone */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(23, 17, 44, 0.7);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.4);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 85, 247, 0.8);
+}
+
+.glow-btn:hover {
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.45);
+}
+
+.purple-glow-card {
+  box-shadow: 0 8px 32px 0 rgba(126, 34, 206, 0.15);
+}
