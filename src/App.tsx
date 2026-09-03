@@ -678,8 +678,16 @@ export default function App() {
 
       {/* TOAST SYSTEM */}
       {toast && (
-        <div className="fixed bottom-5 right-5 z-[100] bg-gradient-to-r from-luxury-800 to-indigo-800 text-white font-semibold text-xs px-4 py-2.5 rounded-xl shadow-lg border border-luxury-600/30 flex items-center space-x-1.5 animate-bounce">
-          <Check className="w-4 h-4 text-emerald-400" />
+        <div className={`fixed bottom-5 right-5 z-[100] font-semibold text-xs px-4 py-2.5 rounded-xl shadow-lg border flex items-center space-x-2 ${
+          toast.type === "error"
+            ? "bg-gradient-to-r from-rose-950 via-rose-900 to-red-950 text-white border-rose-500/50 shadow-rose-950/50"
+            : "bg-gradient-to-r from-luxury-800 to-indigo-800 text-white border-luxury-600/30 animate-bounce"
+        }`}>
+          {toast.type === "error" ? (
+            <AlertCircle className="w-4 h-4 text-rose-300 shrink-0" />
+          ) : (
+            <Check className="w-4 h-4 text-emerald-400 shrink-0" />
+          )}
           <span>{toast.message}</span>
         </div>
       )}
